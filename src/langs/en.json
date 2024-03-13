@@ -1,10 +1,16 @@
 {
     "message": {
       "send": "Send a message",
-      "importantInforation":"LLMs can make mistakes. Verify important information."
+      "importantInforation":"LLMs can make mistakes. Verify important information.",
+      "selectAmodel":"Select a model"
     },
     "placehoder": {
         "hello": "Hello",
         "help": "How can I help you today?"
+    },
+    "btn": {
+      "setDefaultModel": "Set as default",
+      "newChat": "New Chat",
+      "openNewChat": "Open new chat"
     }
 }

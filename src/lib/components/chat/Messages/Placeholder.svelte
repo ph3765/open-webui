@@ -2,7 +2,7 @@
 	import { WEBUI_BASE_URL } from '$lib/constants';
 	import { user } from '$lib/stores';
 	import { onMount } from 'svelte';
-	import { _ } from 'svelte-i18n'
+	import { _ } from 'svelte-i18n';
 
 	export let models = [];
 	export let modelfiles = [];

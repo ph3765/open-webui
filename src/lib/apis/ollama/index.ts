@@ -1,4 +1,5 @@
 import { OLLAMA_API_BASE_URL } from '$lib/constants';
+import { _ } from 'svelte-i18n';
 
 export const getOllamaUrls = async (token: string = '') => {
 	let error = null;
@@ -177,7 +178,7 @@ export const generateTitle = async (
 		throw error;
 	}
 
-	return res?.response ?? 'New Chat';
+	return res?.response ?? $_('btn.newChat');
 };
 
 export const generatePrompt = async (token: string = '', model: string, conversation: string) => {

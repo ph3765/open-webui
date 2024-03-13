@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import sha256 from 'js-sha256';
+import { _ } from 'svelte-i18n';
 
 //////////////////////////
 // Helper functions
@@ -253,7 +254,7 @@ const convertOpenAIMessages = (convo) => {
 		messages: messages,
 		options: {},
 		timestamp: convo['create_time'],
-		title: convo['title'] ?? 'New Chat'
+		title: convo['title'] ?? $_('btn.newChat')
 	};
 	return chat;
 };

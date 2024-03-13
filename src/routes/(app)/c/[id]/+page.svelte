@@ -39,6 +39,7 @@
 	import Navbar from '$lib/components/layout/Navbar.svelte';
 	import { RAGTemplate } from '$lib/utils/rag';
 	import { LITELLM_API_BASE_URL, OPENAI_API_BASE_URL, WEBUI_BASE_URL } from '$lib/constants';
+	import { _ } from 'svelte-i18n';
 
 	let loaded = false;
 
@@ -217,7 +218,7 @@
 				if ($settings.saveChatHistory ?? true) {
 					chat = await createNewChat(localStorage.token, {
 						id: $chatId,
-						title: 'New Chat',
+						title: $_('btn.newChat'),
 						models: selectedModels,
 						system: $settings.system ?? undefined,
 						options: {

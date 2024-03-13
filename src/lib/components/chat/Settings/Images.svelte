@@ -19,6 +19,8 @@
 		updateOpenAIKey
 	} from '$lib/apis/images';
 	import { getBackendConfig } from '$lib/apis';
+	import { _ } from 'svelte-i18n';
+
 	const dispatch = createEventDispatcher();
 
 	export let saveSettings: Function;
@@ -254,10 +256,10 @@
 						<select
 							class="w-full rounded-lg py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
 							bind:value={selectedModel}
-							placeholder="Select a model"
+							placeholder="$_('message.selectAmodel')"
 						>
 							{#if !selectedModel}
-								<option value="" disabled selected>Select a model</option>
+								<option value="" disabled selected>{$_('message.selectAmodel')}</option>
 							{/if}
 							{#each models ?? [] as model}
 								<option value={model.id} class="bg-gray-100 dark:bg-gray-700">{model.name}</option>

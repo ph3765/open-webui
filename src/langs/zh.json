@@ -1,10 +1,16 @@
 {
     "message": {
       "send": "请输入问题",
-      "importantInforation":"温馨提示：LLM可能会出错。核实重要信息。"
+      "importantInforation":"温馨提示:LLM可能会出错。核实重要信息。",
+      "selectAmodel":"选择一个模型"
     }, 
     "placehoder": {
         "hello": "您好",
         "help": "我能给您提供什么帮助？"
+    },
+    "btn": {
+      "setDefaultModel": "设置为默认",
+      "newChat": "新建对话",
+      "openNewChat": "打开新的对话"
     }
 }

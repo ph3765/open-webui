@@ -4,6 +4,7 @@
 	import { getUserPermissions, updateUserPermissions } from '$lib/apis/users';
 	import { models } from '$lib/stores';
 	import { onMount } from 'svelte';
+	import { _ } from "svelte-i18n";
 
 	export let saveHandler: Function;
 
@@ -117,9 +118,9 @@
 											<select
 												class="w-full rounded-lg py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
 												bind:value={modelId}
-												placeholder="Select a model"
+												placeholder="$_('message.selectAmodel')"
 											>
-												<option value="" disabled selected>Select a model</option>
+												<option value="" disabled selected>{$_('message.selectAmodel')}</option>
 												{#each $models.filter((model) => model.id) as model}
 													<option value={model.id} class="bg-gray-100 dark:bg-gray-700"
 														>{model.name}</option

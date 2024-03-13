@@ -19,6 +19,8 @@
 	import { splitStream } from '$lib/utils';
 	import ChatCompletion from '$lib/components/playground/ChatCompletion.svelte';
 
+	import { _ } from 'svelte-i18n';
+
 	let mode = 'chat';
 	let loaded = false;
 	let text = '';
@@ -318,7 +320,7 @@
 							class="outline-none bg-transparent text-sm font-medium rounded-lg w-full placeholder-gray-400"
 							bind:value={selectedModelId}
 						>
-							<option class=" text-gray-800" value="" selected disabled>Select a model</option>
+							<option class=" text-gray-800" value="" selected disabled>{$_('message.selectAmodel')}</option>
 
 							{#each $models as model}
 								{#if model.name === 'hr'}

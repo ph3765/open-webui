@@ -15,6 +15,7 @@
 	import { onMount } from 'svelte';
 	import { addLiteLLMModel, deleteLiteLLMModel, getLiteLLMModelInfo } from '$lib/apis/litellm';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
+	import { _ } from 'svelte-i18n';
 
 	export let getModels: Function;
 
@@ -610,10 +611,10 @@
 								<select
 									class="w-full rounded-lg py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
 									bind:value={deleteModelTag}
-									placeholder="Select a model"
+									placeholder="$_('message.selectAmodel')"
 								>
 									{#if !deleteModelTag}
-										<option value="" disabled selected>Select a model</option>
+										<option value="" disabled selected>{$_('message.selectAmodel')}</option>
 									{/if}
 									{#each $models.filter((m) => m.size != null && (selectedOllamaUrlIdx === null ? true : (m?.urls ?? []).includes(selectedOllamaUrlIdx))) as model}
 										<option value={model.name} class="bg-gray-100 dark:bg-gray-700"
@@ -981,10 +982,10 @@
 									<select
 										class="w-full rounded-lg py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
 										bind:value={deleteLiteLLMModelId}
-										placeholder="Select a model"
+										placeholder="$_('message.selectAmodel')"
 									>
 										{#if !deleteLiteLLMModelId}
-											<option value="" disabled selected>Select a model</option>
+											<option value="" disabled selected>{$_('message.selectAmodel')}</option>
 										{/if}
 										{#each liteLLMModelInfo as model}
 											<option value={model.model_info.id} class="bg-gray-100 dark:bg-gray-700"

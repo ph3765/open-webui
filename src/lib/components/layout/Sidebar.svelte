@@ -20,6 +20,7 @@
 	import { slide } from 'svelte/transition';
 	import { WEBUI_BASE_URL } from '$lib/constants';
 	import Tooltip from '../common/Tooltip.svelte';
+	import { _ } from 'svelte-i18n';
 
 	let show = false;
 	let navElement;
@@ -128,7 +129,7 @@
 						/>
 					</div>
 
-					<div class=" self-center font-medium text-sm">New Chat</div>
+					<div class=" self-center font-medium text-sm">{$_('btn.newChat')}</div>
 				</div>
 
 				<div class="self-center">

@@ -4,6 +4,8 @@
 	import { config, models, user } from '$lib/stores';
 	import { createEventDispatcher, onMount } from 'svelte';
 	import { toast } from 'svelte-sonner';
+	import { _ } from 'svelte-i18n';
+	
 	const dispatch = createEventDispatcher();
 
 	export let saveSettings: Function;
@@ -189,7 +191,7 @@
 					<select
 						class="w-full rounded-lg py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
 						bind:value={titleAutoGenerateModel}
-						placeholder="Select a model"
+						placeholder="$_('message.selectAmodel')"
 					>
 						<option value="" selected>Current Model</option>
 						{#each $models as model}

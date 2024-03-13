@@ -14,7 +14,7 @@
 	import { transcribeAudio } from '$lib/apis/audio';
 	import Tooltip from '../common/Tooltip.svelte';
 
-	import { _ } from 'svelte-i18n'
+	import { _ } from 'svelte-i18n';
 
 	export let submitPrompt: Function;
 	export let stopResponse: Function;
