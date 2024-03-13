@@ -23,7 +23,7 @@ try:
 except ImportError:
     print("dotenv not installed, skipping...")
 
-WEBUI_NAME = "Open WebUI"
+WEBUI_NAME = "小智"
 shutil.copyfile("../build/favicon.png", "./static/favicon.png")
 
 ####################################
@@ -236,8 +236,9 @@ OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
 OPENAI_API_BASE_URL = os.environ.get("OPENAI_API_BASE_URL", "")
 
 
-if OPENAI_API_BASE_URL == "":
-    OPENAI_API_BASE_URL = "https://api.openai.com/v1"
+#jeffyuan: 不需要默认设置，可以通过.env中去设置
+#if OPENAI_API_BASE_URL == "":
+#    OPENAI_API_BASE_URL = "https://api.openai.com/v1"
 
 OPENAI_API_KEYS = os.environ.get("OPENAI_API_KEYS", "")
 OPENAI_API_KEYS = OPENAI_API_KEYS if OPENAI_API_KEYS != "" else OPENAI_API_KEY
@@ -260,7 +261,7 @@ OPENAI_API_BASE_URLS = [url.strip() for url in OPENAI_API_BASE_URLS.split(";")]
 ENABLE_SIGNUP = os.environ.get("ENABLE_SIGNUP", "True").lower() == "true"
 DEFAULT_MODELS = os.environ.get("DEFAULT_MODELS", None)
 
-
+# 设置首页面的提示
 DEFAULT_PROMPT_SUGGESTIONS = (
     CONFIG_DATA["ui"]["prompt_suggestions"]
     if "ui" in CONFIG_DATA
@@ -268,20 +269,20 @@ DEFAULT_PROMPT_SUGGESTIONS = (
     and type(CONFIG_DATA["ui"]["prompt_suggestions"]) is list
     else [
         {
-            "title": ["Help me study", "vocabulary for a college entrance exam"],
-            "content": "Help me study vocabulary: write a sentence for me to fill in the blank, and I'll try to pick the correct option.",
+            "title": ["帮助我学习", "高考词汇"],
+            "content": "帮我学习词汇：写一个句子让我填空，我会努力选择正确的选项。",
         },
         {
-            "title": ["Give me ideas", "for what to do with my kids' art"],
-            "content": "What are 5 creative things I could do with my kids' art? I don't want to throw them away, but it's also so much clutter.",
+            "title": ["给我一些想法", "关于如何学好一门专业课的"],
+            "content": "智能制造当前非常火，作为一名航空系的学生，如何学好机械知识以及人工智能知识，请给我一些想法。",
         },
         {
-            "title": ["Tell me a fun fact", "about the Roman Empire"],
-            "content": "Tell me a random fun fact about the Roman Empire",
+            "title": ["告诉我一个有趣的事情", "关于工业软件发展"],
+            "content": "随机告诉我一些有关工业软件发展，特别是中国工业软件发展的有趣的事情",
         },
         {
-            "title": ["Show me a code snippet", "of a website's sticky header"],
-            "content": "Show me a code snippet of a website's sticky header in CSS and JavaScript.",
+            "title": ["帮助我编程", "编写一些Python的代码"],
+            "content": "给我看一个python编写web和open ai的代码片段。",
         },
     ]
 )
@@ -341,19 +342,19 @@ CHUNK_SIZE = 1500
 CHUNK_OVERLAP = 100
 
 
-RAG_TEMPLATE = """Use the following context as your learned knowledge, inside <context></context> XML tags.
+RAG_TEMPLATE = """使用<context></context>XML标记中的以下上下文作为您所学到的知识。
 <context>
     [context]
 </context>
 
-When answer to user:
-- If you don't know, just say that you don't know.
-- If you don't know when you are not sure, ask for clarification.
-Avoid mentioning that you obtained the information from the context.
-And answer according to the language of the user's question.
-        
-Given the context information, answer the query.
-Query: [query]"""
+当回答用户时：
+-如果你不知道，就说你不知道。
+-如果你不知道什么时候你不确定，要求澄清。
+避免提及您是从上下文中获得信息的。
+并根据用户提问的语言进行回答。
+
+给定上下文信息，回答查询。
+查询: [query]"""
 
 ####################################
 # Transcribe

@@ -12,6 +12,26 @@
 	import 'tippy.js/dist/tippy.css';
 	import { WEBUI_BASE_URL } from '$lib/constants';
 
+	// 设置国际化
+	import {
+		_,
+		getLocaleFromNavigator,
+		isLoading,
+		register,
+		init,
+		locale
+	} from "svelte-i18n";
+
+	register("en", () => import("../langs/en.json"));
+	register("zh", () => import("../langs/zh.json"));
+
+	init({
+    	fallbackLocale: "en",
+    	initialLocale: getLocaleFromNavigator()
+  	});
+
+	locale.set("zh");
+
 	let loaded = false;
 
 	onMount(async () => {

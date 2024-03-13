@@ -14,6 +14,8 @@
 	import { transcribeAudio } from '$lib/apis/audio';
 	import Tooltip from '../common/Tooltip.svelte';
 
+	import { _ } from 'svelte-i18n'
+
 	export let submitPrompt: Function;
 	export let stopResponse: Function;
 
@@ -665,7 +667,7 @@
 								? chatInputPlaceholder
 								: isRecording
 								? 'Listening...'
-								: 'Send a message'}
+								: $_('message.send') }
 							bind:value={prompt}
 							on:keypress={(e) => {
 								if (e.keyCode == 13 && !e.shiftKey) {
@@ -919,7 +921,7 @@
 				</form>
 
 				<div class="mt-1.5 text-xs text-gray-500 text-center">
-					LLMs can make mistakes. Verify important information.
+					{$_('message.importantInforation')}
 				</div>
 			</div>
 		</div>

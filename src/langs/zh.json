@@ -1,0 +1,10 @@
+{
+    "message": {
+      "send": "请输入问题",
+      "importantInforation":"温馨提示：LLM可能会出错。核实重要信息。"
+    }, 
+    "placehoder": {
+        "hello": "您好",
+        "help": "我能给您提供什么帮助？"
+    }
+}

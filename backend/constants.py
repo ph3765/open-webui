@@ -9,46 +9,46 @@ class ERROR_MESSAGES(str, Enum):
     def __str__(self) -> str:
         return super().__str__()
 
-    DEFAULT = lambda err="": f"Something went wrong :/\n{err if err else ''}"
-    ENV_VAR_NOT_FOUND = "Required environment variable not found. Terminating now."
-    CREATE_USER_ERROR = "Oops! Something went wrong while creating your account. Please try again later. If the issue persists, contact support for assistance."
-    DELETE_USER_ERROR = "Oops! Something went wrong. We encountered an issue while trying to delete the user. Please give it another shot."
-    EMAIL_TAKEN = "Uh-oh! This email is already registered. Sign in with your existing account or choose another email to start anew."
+    DEFAULT = lambda err="": f"发生错误 :/\n{err if err else ''}"
+    ENV_VAR_NOT_FOUND = "找不到所需的环境变量。现在终止。"
+    CREATE_USER_ERROR = "哎呀！创建帐户时出现问题。请稍后再试。如果问题仍然存在，请与支持人员联系以获得帮助。"
+    DELETE_USER_ERROR = "哎呀！出了问题。尝试删除用户时遇到问题。请再打一次。"
+    EMAIL_TAKEN = "哦！此邮箱账号已注册。使用现有帐户登录或选择其他邮箱账号重新开始。"
     USERNAME_TAKEN = (
-        "Uh-oh! This username is already registered. Please choose another username."
+        "哦！此用户名已注册。请选择其他用户名。"
     )
-    COMMAND_TAKEN = "Uh-oh! This command is already registered. Please choose another command string."
-    FILE_EXISTS = "Uh-oh! This file is already registered. Please choose another file."
+    COMMAND_TAKEN = "哦！此命令已注册。请选择另一个命令字符串。"
+    FILE_EXISTS = "哦！此文件已注册。请选择其他文件。"
 
-    NAME_TAG_TAKEN = "Uh-oh! This name tag is already registered. Please choose another name tag string."
+    NAME_TAG_TAKEN = "哦！此名称标记已注册。请选择其他名称标记字符串。"
     INVALID_TOKEN = (
-        "Your session has expired or the token is invalid. Please sign in again."
+        "您的会话已过期或令牌无效。请重新登录。"
     )
-    INVALID_CRED = "The email or password provided is incorrect. Please check for typos and try logging in again."
-    INVALID_EMAIL_FORMAT = "The email format you entered is invalid. Please double-check and make sure you're using a valid email address (e.g., yourname@example.com)."
+    INVALID_CRED = "提供的电子邮件或密码不正确。请检查拼写错误，然后再次尝试登录。"
+    INVALID_EMAIL_FORMAT = "您输入的电子邮件格式无效。请仔细检查并确保您使用的是有效的电子邮件地址（例如。，yourname@example.com)."
     INVALID_PASSWORD = (
-        "The password provided is incorrect. Please check for typos and try again."
+        "提供的密码不正确。请检查拼写错误，然后重试。"
     )
-    UNAUTHORIZED = "401 Unauthorized"
-    ACCESS_PROHIBITED = "You do not have permission to access this resource. Please contact your administrator for assistance."
+    UNAUTHORIZED = "401未经授权"
+    ACCESS_PROHIBITED = "您没有访问此资源的权限。请与管理员联系以获取帮助。"
     ACTION_PROHIBITED = (
-        "The requested action has been restricted as a security measure."
+        "请求的操作已作为安全措施受到限制。"
     )
 
     FILE_NOT_SENT = "FILE_NOT_SENT"
-    FILE_NOT_SUPPORTED = "Oops! It seems like the file format you're trying to upload is not supported. Please upload a file with a supported format (e.g., JPG, PNG, PDF, TXT) and try again."
+    FILE_NOT_SUPPORTED = "哎呀！似乎不支持您尝试上载的文件格式。请上传一个支持格式的文件（如JPG、PNG、PDF、TXT），然后重试。"
 
-    NOT_FOUND = "We could not find what you're looking for :/"
-    USER_NOT_FOUND = "We could not find what you're looking for :/"
-    API_KEY_NOT_FOUND = "Oops! It looks like there's a hiccup. The API key is missing. Please make sure to provide a valid API key to access this feature."
+    NOT_FOUND = "我们找不到您要找的内容 :/"
+    USER_NOT_FOUND = "我们找不到您要找的内容 :/"
+    API_KEY_NOT_FOUND = "哎呀！看起来好像打嗝了。缺少API密钥。请确保提供有效的API密钥以访问此功能。"
 
-    MALICIOUS = "Unusual activities detected, please try again in a few minutes."
+    MALICIOUS = "检测到异常活动，请几分钟后重试。"
 
-    PANDOC_NOT_INSTALLED = "Pandoc is not installed on the server. Please contact your administrator for assistance."
+    PANDOC_NOT_INSTALLED = "服务器上未安装Pandoc。请与管理员联系以获取帮助。"
     INCORRECT_FORMAT = (
-        lambda err="": f"Invalid format. Please use the correct format{err if err else ''}"
+        lambda err="": f"无效的格式。请使用正确的格式{err if err else ''}"
     )
-    RATE_LIMIT_EXCEEDED = "API rate limit exceeded"
+    RATE_LIMIT_EXCEEDED = "超过API费率限制"
 
-    MODEL_NOT_FOUND = lambda name="": f"Model '{name}' was not found"
-    OPENAI_NOT_FOUND = lambda name="": f"OpenAI API was not found"
+    MODEL_NOT_FOUND = lambda name="": f"模型 '{name}' 没找到"
+    OPENAI_NOT_FOUND = lambda name="": f"OpenAI API 没找到"

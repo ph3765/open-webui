@@ -1,0 +1,10 @@
+{
+    "message": {
+      "send": "Send a message",
+      "importantInforation":"LLMs can make mistakes. Verify important information."
+    },
+    "placehoder": {
+        "hello": "Hello",
+        "help": "How can I help you today?"
+    }
+}

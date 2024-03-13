@@ -257,7 +257,7 @@
 						id: responseMessageId,
 						childrenIds: [],
 						role: 'assistant',
-						content: '',
+						content: '',  //jeffyuan: 这个地方是用于修改assistant返回的内容。比如content='根据您的需求，为您提供一下内容：'。这句话会加入到返回的第一句，作为提示。
 						model: model.id,
 						timestamp: Math.floor(Date.now() / 1000) // Unix epoch
 					};
