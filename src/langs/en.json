@@ -4,6 +4,9 @@
       "importantInforation":"LLMs can make mistakes. Verify important information.",
       "selectAmodel":"Select a model"
     },
+    "sidebar": {
+        "search": "Search"
+    },
     "placehoder": {
         "hello": "Hello",
         "help": "How can I help you today?"
@@ -12,5 +15,27 @@
       "setDefaultModel": "Set as default",
       "newChat": "New Chat",
       "openNewChat": "Open new chat"
+    },
+    "documents": {
+        "title": "Documents",
+        "myDocument": "My Documents",
+        "setting":"Document Settings",
+        "help": "ⓘ Use '#' in the prompt input to load and select your documents.",
+        "searchDocument": "Search Document",
+        "inportMapping":"Import Documents Mapping",
+        "exportMapping":"Export Documents Mapping"
+    },
+    "prompts": {
+        "menuName":"Prompts",
+        "myPrompt": "My Prompts",
+        "searchPrompt":"Search Prompt",
+        "importPrompt":"Import Prompts",
+        "exportPrompt":"Export Prompts",
+        "promptCenter": "Made by OpenWebUI Community",
+        "discoverPrompts": "Discover a prompt",
+        "discoverPromptsDescp": "Discover, download, and explore custom prompts"
+    },
+    "error": {
+        "serverError": "Uh-oh! There was an issue connecting to Ollama."
     }
 }

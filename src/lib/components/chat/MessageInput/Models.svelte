@@ -5,6 +5,8 @@
 	import { tick } from 'svelte';
 	import { toast } from 'svelte-sonner';
 
+	import { _ } from 'svelte-i18n';
+
 	export let prompt = '';
 	export let user = null;
 
@@ -113,7 +115,7 @@
 					toast.error(error.error);
 				}
 			} else {
-				toast.error(`Uh-oh! There was an issue connecting to Ollama.`);
+				toast.error($_('error.serverError'));
 			}
 		}
 

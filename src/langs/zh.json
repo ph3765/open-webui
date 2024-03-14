@@ -4,6 +4,9 @@
       "importantInforation":"温馨提示:LLM可能会出错。核实重要信息。",
       "selectAmodel":"选择一个模型"
     }, 
+    "sidebar": {
+        "search": "查找历史对话"
+    },
     "placehoder": {
         "hello": "您好",
         "help": "我能给您提供什么帮助？"
@@ -12,5 +15,27 @@
       "setDefaultModel": "设置为默认",
       "newChat": "新建对话",
       "openNewChat": "打开新的对话"
+    },
+    "documents": {
+        "title": "个人知识库",
+        "myDocument": "文档列表",
+        "setting":"设置",
+        "help": "ⓘ 在提示输入中使用 “ # ” 加载并选择文档。",
+        "searchDocument": "在这里输入搜索的文档",
+        "inportMapping":"导入文档映射",
+        "exportMapping":"导出文档映射"
+    },
+    "prompts": {
+        "menuName":"助手中心",
+        "myPrompt": "我的助手",
+        "searchPrompt":"查找助手",
+        "importPrompt":"导入助手",
+        "exportPrompt":"导出助手",
+        "promptCenter": "共享中心",
+        "discoverPrompts": "发现助手",
+        "discoverPromptsDescp": "发现、下载和探索创建助手"
+    },
+    "error": {
+        "serverError": "哦！连接服务异常啦。"
     }
 }

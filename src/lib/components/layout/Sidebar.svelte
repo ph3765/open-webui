@@ -202,7 +202,7 @@
 					</div>
 
 					<div class="flex self-center">
-						<div class=" self-center font-medium text-sm">Prompts</div>
+						<div class=" self-center font-medium text-sm">{$_('prompts.menuName')}</div>
 					</div>
 				</a>
 			</div>
@@ -230,7 +230,7 @@
 					</div>
 
 					<div class="flex self-center">
-						<div class=" self-center font-medium text-sm">Documents</div>
+						<div class=" self-center font-medium text-sm">{$_('documents.title')}</div>
 					</div>
 				</a>
 			</div>
@@ -297,7 +297,7 @@
 
 					<input
 						class="w-full rounded-r-xl py-1.5 pl-2.5 pr-4 text-sm text-gray-300 bg-gray-950 outline-none"
-						placeholder="Search"
+						placeholder={$_('sidebar.search')}
 						bind:value={search}
 						on:focus={() => {
 							enrichChatsWithContent($chats);

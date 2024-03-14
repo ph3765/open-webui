@@ -1,6 +1,8 @@
 <script>
 	import Modal from '../common/Modal.svelte';
 	import General from './Settings/General.svelte';
+	
+	import { _ } from "svelte-i18n";
 
 	export let show = false;
 
@@ -10,7 +12,7 @@
 <Modal bind:show>
 	<div>
 		<div class=" flex justify-between dark:text-gray-300 px-5 py-4">
-			<div class=" text-lg font-medium self-center">Document Settings</div>
+			<div class=" text-lg font-medium self-center">{$_('documents.setting')}</div>
 			<button
 				class="self-center"
 				on:click={() => {
