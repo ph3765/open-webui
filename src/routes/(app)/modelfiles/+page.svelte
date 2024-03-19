@@ -14,8 +14,6 @@
 	} from '$lib/apis/modelfiles';
 	import { goto } from '$app/navigation';
 
-	import { _ } from "svelte-i18n";
-
 	let localModelfiles = [];
 	let importFiles;
 	let modelfilesImportInputElement: HTMLInputElement;
@@ -388,7 +386,7 @@
 			</div>
 
 			<div class=" my-16">
-				<div class=" text-2xl font-semibold mb-3">{$_('prompts.promptCenter')}</div>
+				<div class=" text-2xl font-semibold mb-3">Made by OpenWebUI Community</div>
 
 				<a
 					class=" flex space-x-4 cursor-pointer w-full mb-2 px-3 py-2"

@@ -174,7 +174,7 @@
 					</div>
 
 					<div class="flex self-center">
-						<div class=" self-center font-medium text-sm">Modelfiles</div>
+						<div class=" self-center font-medium text-sm">{$_("menu.modelfiles")}</div>
 					</div>
 				</a>
 			</div>
@@ -202,7 +202,7 @@
 					</div>
 
 					<div class="flex self-center">
-						<div class=" self-center font-medium text-sm">{$_('prompts.menuName')}</div>
+						<div class=" self-center font-medium text-sm">{$_("menu.prompts")}</div>
 					</div>
 				</a>
 			</div>
@@ -230,7 +230,7 @@
 					</div>
 
 					<div class="flex self-center">
-						<div class=" self-center font-medium text-sm">{$_('documents.title')}</div>
+						<div class=" self-center font-medium text-sm">{$_("menu.documents")}</div>
 					</div>
 				</a>
 			</div>
@@ -271,7 +271,7 @@
 									/>
 								</svg>
 
-								<div>Enable Chat History</div>
+								<div>{$_("message.enableChatHistory")}</div>
 							</button>
 						</div>
 					</div>
@@ -297,7 +297,7 @@
 
 					<input
 						class="w-full rounded-r-xl py-1.5 pl-2.5 pr-4 text-sm text-gray-300 bg-gray-950 outline-none"
-						placeholder={$_('sidebar.search')}
+						placeholder={$_("placeholder.search")}
 						bind:value={search}
 						on:focus={() => {
 							enrichChatsWithContent($chats);
@@ -661,7 +661,7 @@
 											/>
 										</svg>
 									</div>
-									<div class=" self-center font-medium">Settings</div>
+									<div class=" self-center font-medium">{$_("btn.settings")}</div>
 								</button>
 							</div>
 
@@ -695,7 +695,7 @@
 											/>
 										</svg>
 									</div>
-									<div class=" self-center font-medium">Sign Out</div>
+									<div class=" self-center font-medium">{$_("btn.signOut")}</div>
 								</button>
 							</div>
 						</div>

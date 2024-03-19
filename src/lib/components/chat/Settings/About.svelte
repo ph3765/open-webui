@@ -6,6 +6,7 @@
 	import { compareVersion } from '$lib/utils';
 	import { onMount } from 'svelte';
 
+	import { _ } from "svelte-i18n";
 	let ollamaVersion = '';
 
 	let updateAvailable = null;
@@ -43,7 +44,7 @@
 		<div>
 			<div class=" mb-2.5 text-sm font-medium flex space-x-2 items-center">
 				<div>
-					{$WEBUI_NAME} Version
+					{$WEBUI_NAME} {$_("message.version")}
 				</div>
 			</div>
 			<div class="flex w-full justify-between items-center">

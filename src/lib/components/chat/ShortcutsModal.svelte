@@ -57,7 +57,7 @@
 					</div>
 
 					<div class="w-full flex justify-between items-center">
-						<div class=" text-sm">Focus chat input</div>
+						<div class=" text-sm">{$_("message.focusChatInput")}</div>
 
 						<div class="flex space-x-1 text-xs">
 							<div
@@ -75,7 +75,7 @@
 					</div>
 
 					<div class="w-full flex justify-between items-center">
-						<div class=" text-sm">Copy last code block</div>
+						<div class=" text-sm">{$_("message.copyLastCodeBlock")}</div>
 
 						<div class="flex space-x-1 text-xs">
 							<div
@@ -99,7 +99,7 @@
 					</div>
 
 					<div class="w-full flex justify-between items-center">
-						<div class=" text-sm">Copy last response</div>
+						<div class=" text-sm">{$_("message.copyLastResponse")}</div>
 
 						<div class="flex space-x-1 text-xs">
 							<div
@@ -125,7 +125,7 @@
 
 				<div class="flex flex-col space-y-3 w-full self-start">
 					<div class="w-full flex justify-between items-center">
-						<div class=" text-sm">Toggle settings</div>
+						<div class=" text-sm">{$_("message.toggleSettings")}</div>
 
 						<div class="flex space-x-1 text-xs">
 							<div
@@ -142,7 +142,7 @@
 					</div>
 
 					<div class="w-full flex justify-between items-center">
-						<div class=" text-sm">Toggle sidebar</div>
+						<div class=" text-sm">{$_("message.toggleSidebar")}</div>
 
 						<div class="flex space-x-1 text-xs">
 							<div
@@ -166,7 +166,7 @@
 					</div>
 
 					<div class="w-full flex justify-between items-center">
-						<div class=" text-sm">Delete chat</div>
+						<div class=" text-sm">{$_("message.deleteChat")}</div>
 
 						<div class="flex space-x-1 text-xs">
 							<div
@@ -189,7 +189,7 @@
 					</div>
 
 					<div class="w-full flex justify-between items-center">
-						<div class=" text-sm">Show shortcuts</div>
+						<div class=" text-sm">{$_("message.showShortcuts")}</div>
 
 						<div class="flex space-x-1 text-xs">
 							<div

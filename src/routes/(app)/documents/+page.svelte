@@ -17,9 +17,6 @@
 	import AddFilesPlaceholder from '$lib/components/AddFilesPlaceholder.svelte';
 	import SettingsModal from '$lib/components/documents/SettingsModal.svelte';
 	import AddDocModal from '$lib/components/documents/AddDocModal.svelte';
-
-	import { _ } from 'svelte-i18n';
-
 	let importFiles = '';
 
 	let inputFiles = '';
@@ -191,7 +188,7 @@
 		<div class="max-w-2xl mx-auto w-full px-3 md:px-0 my-10">
 			<div class="mb-6">
 				<div class="flex justify-between items-center">
-					<div class=" text-2xl font-semibold self-center">{$_('documents.myDocument')}</div>
+					<div class=" text-2xl font-semibold self-center">My Documents</div>
 
 					<div>
 						<button
@@ -214,12 +211,12 @@
 								/>
 							</svg>
 
-							<div class=" text-xs">{$_('documents.setting')}</div>
+							<div class=" text-xs">Document Settings</div>
 						</button>
 					</div>
 				</div>
 				<div class=" text-gray-500 text-xs mt-1">
-					{$_('documents.help')}
+					ⓘ Use '#' in the prompt input to load and select your documents.
 				</div>
 			</div>
 
@@ -242,7 +239,7 @@
 					<input
 						class=" w-full text-sm pr-4 py-1 rounded-r-xl outline-none bg-transparent"
 						bind:value={query}
-						placeholder={$_('documents.searchDocument')}
+						placeholder="Search Document"
 					/>
 				</div>
 
@@ -566,7 +563,7 @@
 							documentsImportInputElement.click();
 						}}
 					>
-						<div class=" self-center mr-2 font-medium">{$_('documents.inportMapping')}</div>
+						<div class=" self-center mr-2 font-medium">Import Documents Mapping</div>
 
 						<div class=" self-center">
 							<svg
@@ -593,7 +590,7 @@
 							saveAs(blob, `documents-mapping-export-${Date.now()}.json`);
 						}}
 					>
-						<div class=" self-center mr-2 font-medium">{$_('documents.exportMapping')}</div>
+						<div class=" self-center mr-2 font-medium">Export Documents Mapping</div>
 
 						<div class=" self-center">
 							<svg

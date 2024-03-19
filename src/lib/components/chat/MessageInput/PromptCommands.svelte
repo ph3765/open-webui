@@ -3,6 +3,7 @@
 	import { findWordIndices } from '$lib/utils';
 	import { tick } from 'svelte';
 	import { toast } from 'svelte-sonner';
+	import { _ } from 'svelte-i18n';
 
 	export let prompt = '';
 	let selectedCommandIdx = 0;
@@ -113,8 +114,7 @@
 					</div>
 
 					<div class="line-clamp-1">
-						Tip: Update multiple variable slots consecutively by pressing the tab key in the chat
-						input after each replacement.
+						{$_("message.tip")}
 					</div>
 				</div>
 			</div>

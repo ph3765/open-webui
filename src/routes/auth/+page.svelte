@@ -6,6 +6,8 @@
 	import { onMount } from 'svelte';
 	import { toast } from 'svelte-sonner';
 
+	import { _ } from 'svelte-i18n';
+
 	let loaded = false;
 	let mode = 'signin';
 
@@ -16,7 +18,7 @@
 	const setSessionUser = async (sessionUser) => {
 		if (sessionUser) {
 			console.log(sessionUser);
-			toast.success(`You're now logged in.`);
+			toast.success($_("alert.loginSuccess"));
 			localStorage.token = sessionUser.token;
 			await user.set(sessionUser);
 			goto('/');
@@ -96,26 +98,25 @@
 					}}
 				>
 					<div class=" text-xl sm:text-2xl font-bold">
-						{mode === 'signin' ? 'Sign in' : 'Sign up'} to {$WEBUI_NAME}
+						{mode === 'signin' ? $_('message.signIn') : $_('message.signUp')} {$WEBUI_NAME}
 					</div>
 
 					{#if mode === 'signup'}
 						<div class=" mt-1 text-xs font-medium text-gray-500">
-							ⓘ {$WEBUI_NAME} does not make any external connections, and your data stays securely on
-							your locally hosted server.
+							ⓘ {$WEBUI_NAME} {$_("message.databaseMessage")}
 						</div>
 					{/if}
 
 					<div class="flex flex-col mt-4">
 						{#if mode === 'signup'}
 							<div>
-								<div class=" text-sm font-semibold text-left mb-1">Name</div>
+								<div class=" text-sm font-semibold text-left mb-1">{$_("label.name")}</div>
 								<input
 									bind:value={name}
 									type="text"
 									class=" border px-4 py-2.5 rounded-2xl w-full text-sm"
 									autocomplete="name"
-									placeholder="Enter Your Full Name"
+									placeholder={$_("placehoder.fullName")}
 									required
 								/>
 							</div>
@@ -124,24 +125,24 @@
 						{/if}
 
 						<div class="mb-2">
-							<div class=" text-sm font-semibold text-left mb-1">Email</div>
+							<div class=" text-sm font-semibold text-left mb-1">{$_("label.email")}</div>
 							<input
 								bind:value={email}
 								type="email"
 								class=" border px-4 py-2.5 rounded-2xl w-full text-sm"
 								autocomplete="email"
-								placeholder="Enter Your Email"
+								placeholder={$_("placeholder.email")}
 								required
 							/>
 						</div>
 
 						<div>
-							<div class=" text-sm font-semibold text-left mb-1">Password</div>
+							<div class=" text-sm font-semibold text-left mb-1">{$_("label.password")}</div>
 							<input
 								bind:value={password}
 								type="password"
 								class=" border px-4 py-2.5 rounded-2xl w-full text-sm"
-								placeholder="Enter Your Password"
+								placeholder={$_("placeholder.password")}
 								autocomplete="current-password"
 								required
 							/>
@@ -153,11 +154,11 @@
 							class=" bg-gray-900 hover:bg-gray-800 w-full rounded-full text-white font-semibold text-sm py-3 transition"
 							type="submit"
 						>
-							{mode === 'signin' ? 'Sign In' : 'Create Account'}
+							{mode === 'signin' ? $_('btn.signIn') : $_('btn.createAccount')}
 						</button>
 
 						<div class=" mt-4 text-sm text-center">
-							{mode === 'signin' ? `Don't have an account?` : `Already have an account?`}
+							{mode === 'signin' ? $_('message.noAccount') : $_("message.alreadyAccount")}
 
 							<button
 								class=" font-medium underline"
@@ -170,7 +171,7 @@
 									}
 								}}
 							>
-								{mode === 'signin' ? `Sign up` : `Sign In`}
+								{mode === 'signin' ? $_(`btn.signUp`) : $_("btn.signIn")}
 							</button>
 						</div>
 					</div>

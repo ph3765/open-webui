@@ -6,7 +6,7 @@
 	import ProfileImage from './ProfileImage.svelte';
 	import { modelfiles, settings } from '$lib/stores';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
-
+	import { _ } from 'svelte-i18n';
 	const dispatch = createEventDispatcher();
 
 	export let user;
@@ -123,7 +123,7 @@
 											{file.name}
 										</div>
 
-										<div class=" text-gray-500 text-sm">Document</div>
+										<div class=" text-gray-500 text-sm">{$_("btn.document")}</div>
 									</div>
 								</button>
 							{:else if file.type === 'collection'}
@@ -152,7 +152,7 @@
 											{file?.title ?? `#${file.name}`}
 										</div>
 
-										<div class=" text-gray-500 text-sm">Collection</div>
+										<div class=" text-gray-500 text-sm">{$_("btn.collection")}</div>
 									</div>
 								</button>
 							{/if}
@@ -181,7 +181,7 @@
 								editMessageConfirmHandler();
 							}}
 						>
-							Save & Submit
+							{$_("btn.save")}
 						</button>
 
 						<button

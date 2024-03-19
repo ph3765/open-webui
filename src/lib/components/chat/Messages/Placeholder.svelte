@@ -65,9 +65,9 @@
 					</div>
 				{/if}
 			{:else}
-				<div class=" line-clamp-1">{$_('placehoder.hello')}, {$user.name}</div>
+				<div class=" line-clamp-1">{$_('message.hello')}, {$user.name}</div>
 
-				<div>{$_('placehoder.help')}</div>
+				<div>{$_('message.help')}</div>
 			{/if}
 		</div>
 	</div>

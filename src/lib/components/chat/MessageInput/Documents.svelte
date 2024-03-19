@@ -5,6 +5,7 @@
 	import { removeFirstHashWord, isValidHttpUrl } from '$lib/utils';
 	import { tick } from 'svelte';
 	import { toast } from 'svelte-sonner';
+	import { _ } from 'svelte-i18n';
 
 	export let prompt = '';
 
@@ -117,7 +118,7 @@
 									{doc?.title ?? `#${doc.name}`}
 								</div>
 
-								<div class=" text-xs text-gray-600 line-clamp-1">Collection</div>
+								<div class=" text-xs text-gray-600 line-clamp-1">{$_("btn.collection")}</div>
 							{:else}
 								<div class=" font-medium text-black line-clamp-1">
 									#{doc.name} ({doc.filename})
@@ -140,7 +141,7 @@
 									confirmSelectWeb(url);
 								} else {
 									toast.error(
-										'Oops! Looks like the URL is invalid. Please double-check and try again.'
+										$_("alert.error")
 									);
 								}
 							}}
@@ -149,7 +150,7 @@
 								{prompt.split(' ')?.at(0)?.substring(1)}
 							</div>
 
-							<div class=" text-xs text-gray-600 line-clamp-1">Web</div>
+							<div class=" text-xs text-gray-600 line-clamp-1">{$_("btn.web")}</div>
 						</button>
 					{/if}
 				</div>

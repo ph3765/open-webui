@@ -8,6 +8,7 @@
 	import { getChangelog } from '$lib/apis';
 
 	import Modal from './common/Modal.svelte';
+	import { _ } from "svelte-i18n";
 
 	export let show = false;
 
@@ -23,7 +24,7 @@
 	<div class="px-5 py-4 dark:text-gray-300">
 		<div class="flex justify-between items-start">
 			<div class="text-xl font-bold">
-				What’s New in {$WEBUI_NAME}
+				{$_("message.whatNewIn")} {$WEBUI_NAME}
 				<Confetti x={[-1, -0.25]} y={[0, 0.5]} />
 			</div>
 			<button
@@ -45,7 +46,7 @@
 			</button>
 		</div>
 		<div class="flex items-center mt-1">
-			<div class="text-sm dark:text-gray-200">Release Notes</div>
+			<div class="text-sm dark:text-gray-200">{$_("message.releaseNotes")}</div>
 			<div class="flex self-center w-[1px] h-6 mx-2.5 bg-gray-200 dark:bg-gray-700" />
 			<div class="text-sm dark:text-gray-200">
 				v{WEBUI_VERSION}
@@ -108,7 +109,7 @@
 				}}
 				class=" px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-gray-100 transition rounded"
 			>
-				<span class="relative">Okay, Let's Go!</span>
+				<span class="relative">{$_("message.Okay") + "，" + $_("message.letGo")}</span>
 			</button>
 		</div>
 	</div>

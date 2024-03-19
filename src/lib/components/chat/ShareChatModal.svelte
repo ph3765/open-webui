@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Modal from '../common/Modal.svelte';
+	import { _ } from 'svelte-i18n';
 
 	export let downloadChat: Function;
 	export let shareChat: Function;
@@ -17,11 +18,11 @@
 				show = false;
 			}}
 		>
-			Share to OpenWebUI Community
+			{$_("btn.shareToCommunity")}
 		</button>
 
 		<div class="flex justify-center space-x-1 mt-1.5">
-			<div class=" self-center text-gray-400 text-xs font-medium">or</div>
+			<div class=" self-center text-gray-400 text-xs font-medium">{$_("message.or")}</div>
 
 			<button
 				class=" self-center rounded-full text-xs font-medium text-gray-700 dark:text-gray-500 underline"
@@ -31,7 +32,7 @@
 					show = false;
 				}}
 			>
-				Download as a File
+				{$_("btn.downloadAsFile")}
 			</button>
 		</div>
 	</div>

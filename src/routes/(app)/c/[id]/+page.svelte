@@ -493,12 +493,12 @@
 					responseMessage.content = error.error;
 				}
 			} else {
-				toast.error($_('error.serverError'));
-				responseMessage.content = $_('error.serverError');
+				toast.error(`Uh-oh! There was an issue connecting to Ollama.`);
+				responseMessage.content = `Uh-oh! There was an issue connecting to Ollama.`;
 			}
 
 			responseMessage.error = true;
-			responseMessage.content = $_('error.serverError');
+			responseMessage.content = `Uh-oh! There was an issue connecting to Ollama.`;
 			responseMessage.done = true;
 			messages = messages;
 		}

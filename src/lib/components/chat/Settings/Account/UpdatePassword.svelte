@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { toast } from 'svelte-sonner';
 	import { updateUserPassword } from '$lib/apis/auths';
+	import { _ } from "svelte-i18n";
 
 	let show = false;
 	let currentPassword = '';
@@ -17,7 +18,7 @@
 			);
 
 			if (res) {
-				toast.success('Successfully updated.');
+				toast.success($_("alert.updateSuccess"));
 			}
 
 			currentPassword = '';
@@ -25,7 +26,7 @@
 			newPasswordConfirm = '';
 		} else {
 			toast.error(
-				`The passwords you entered don't quite match. Please double-check and try again.`
+				$_("alert.passwordError")
 			);
 			newPassword = '';
 			newPasswordConfirm = '';
@@ -40,20 +41,20 @@
 	}}
 >
 	<div class="flex justify-between items-center text-sm">
-		<div class="  font-medium">Change Password</div>
+		<div class="  font-medium">{$_("message.changePassword")}</div>
 		<button
 			class=" text-xs font-medium text-gray-500"
 			type="button"
 			on:click={() => {
 				show = !show;
-			}}>{show ? 'Hide' : 'Show'}</button
+			}}>{show ? $_("btn.hide") : $_("btn.show")}</button
 		>
 	</div>
 
 	{#if show}
 		<div class=" py-2.5 space-y-1.5">
 			<div class="flex flex-col w-full">
-				<div class=" mb-1 text-xs text-gray-500">Current Password</div>
+				<div class=" mb-1 text-xs text-gray-500">{$_("message.currentPassword")}</div>
 
 				<div class="flex-1">
 					<input
@@ -67,7 +68,7 @@
 			</div>
 
 			<div class="flex flex-col w-full">
-				<div class=" mb-1 text-xs text-gray-500">New Password</div>
+				<div class=" mb-1 text-xs text-gray-500">{$_("message.newPassword")}</div>
 
 				<div class="flex-1">
 					<input
@@ -81,7 +82,7 @@
 			</div>
 
 			<div class="flex flex-col w-full">
-				<div class=" mb-1 text-xs text-gray-500">Confirm Password</div>
+				<div class=" mb-1 text-xs text-gray-500">{$_("message.confirmPassword")}</div>
 
 				<div class="flex-1">
 					<input
@@ -99,7 +100,7 @@
 			<button
 				class=" px-4 py-2 text-xs bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-800 text-gray-100 transition rounded-md font-medium"
 			>
-				Update password
+				{$_("btn.updatePassword")}
 			</button>
 		</div>
 	{/if}

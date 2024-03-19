@@ -634,7 +634,7 @@
 					<div class=" flex">
 						{#if fileUploadEnabled}
 							<div class=" self-end mb-2 ml-1">
-								<Tooltip content="Upload files">
+								<Tooltip content={$_("tooltip.uploadFiles")}>
 									<button
 										class="bg-gray-50 hover:bg-gray-100 text-gray-800 dark:bg-gray-850 dark:text-white dark:hover:bg-gray-800 transition rounded-full p-1.5"
 										type="button"

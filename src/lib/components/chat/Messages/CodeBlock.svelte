@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { _ } from "svelte-i18n";
 	import { copyToClipboard } from '$lib/utils';
 	import hljs from 'highlight.js';
 	import 'highlight.js/styles/github-dark.min.css';
@@ -27,7 +28,7 @@
 		>
 			<div class="p-1">{@html lang}</div>
 			<button class="copy-code-button bg-none border-none p-1" on:click={copyCode}
-				>{copied ? 'Copied' : 'Copy Code'}</button
+				>{copied ? $_("btn.copied") : $_("btn.copyCode")}</button
 			>
 		</div>
 

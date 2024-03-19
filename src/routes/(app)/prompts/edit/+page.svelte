@@ -8,8 +8,6 @@
 	import { getPrompts, updatePromptByCommand } from '$lib/apis/prompts';
 	import { page } from '$app/stores';
 
-	import { _ } from "svelte-i18n";
-
 	let loading = false;
 
 	// ///////////
@@ -76,7 +74,7 @@
 <div class="min-h-screen max-h-[100dvh] w-full flex justify-center dark:text-white">
 	<div class="flex flex-col justify-between w-full overflow-y-auto">
 		<div class="max-w-2xl mx-auto w-full px-3 md:px-0 my-10">
-			<div class=" text-2xl font-semibold mb-6">{$_('prompts.myPrompt')}</div>
+			<div class=" text-2xl font-semibold mb-6">My Prompts</div>
 
 			<button
 				class="flex space-x-1"

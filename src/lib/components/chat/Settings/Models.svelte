@@ -463,7 +463,7 @@
 	<div class=" space-y-3 pr-1.5 overflow-y-scroll h-[23rem]">
 		{#if ollamaVersion}
 			<div class="space-y-2 pr-1.5">
-				<div class="text-sm font-medium">Manage Ollama Models</div>
+				<div class="text-sm font-medium">{$_("message.manageOllamaModels")}</div>
 
 				{#if OLLAMA_URLS.length > 0}
 					<div class="flex gap-2">
@@ -471,7 +471,7 @@
 							<select
 								class="w-full rounded-lg py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
 								bind:value={selectedOllamaUrlIdx}
-								placeholder="Select an Ollama instance"
+								placeholder={$_("placeholder.ollamaInstance")}
 							>
 								{#each OLLAMA_URLS as url, idx}
 									<option value={idx} class="bg-gray-100 dark:bg-gray-700">{url}</option>
@@ -514,7 +514,7 @@
 
 				<div class="space-y-2">
 					<div>
-						<div class=" mb-2 text-sm font-medium">Pull a model from Ollama.com</div>
+						<div class=" mb-2 text-sm font-medium">{$_("message.pullModelOllama")}</div>
 						<div class="flex w-full">
 							<div class="flex-1 mr-2">
 								<input
@@ -576,10 +576,10 @@
 
 						<div>
 							<div class="mt-2 mb-1 text-xs text-gray-400 dark:text-gray-500">
-								To access the available model names for downloading, <a
+								{$_("message.accessModelDownloading")} <a
 									class=" text-gray-500 dark:text-gray-300 font-medium underline"
 									href="https://ollama.com/library"
-									target="_blank">click here.</a
+									target="_blank">{$_("btn.clickHere")}</a
 								>
 							</div>
 						</div>
@@ -605,13 +605,13 @@
 					</div>
 
 					<div>
-						<div class=" mb-2 text-sm font-medium">Delete a model</div>
+						<div class=" mb-2 text-sm font-medium">{$_("message.deleteModel")}</div>
 						<div class="flex w-full">
 							<div class="flex-1 mr-2">
 								<select
 									class="w-full rounded-lg py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
 									bind:value={deleteModelTag}
-									placeholder="$_('message.selectAmodel')"
+									placeholder={$_('message.selectAmodel')}
 								>
 									{#if !deleteModelTag}
 										<option value="" disabled selected>{$_('message.selectAmodel')}</option>
@@ -647,13 +647,13 @@
 
 					<div class="pt-1">
 						<div class="flex justify-between items-center text-xs">
-							<div class=" text-sm font-medium">Experimental</div>
+							<div class=" text-sm font-medium">{$_("message.experimental")}</div>
 							<button
 								class=" text-xs font-medium text-gray-500"
 								type="button"
 								on:click={() => {
 									showExperimentalOllama = !showExperimentalOllama;
-								}}>{showExperimentalOllama ? 'Hide' : 'Show'}</button
+								}}>{showExperimentalOllama ? $_("btn.hide") : $_("btn.show")}</button
 							>
 						</div>
 					</div>
@@ -665,7 +665,7 @@
 							}}
 						>
 							<div class=" mb-2 flex w-full justify-between">
-								<div class="  text-sm font-medium">Upload a GGUF model</div>
+								<div class="  text-sm font-medium">{$_("message.uploadModel")}</div>
 
 								<button
 									class="p-1 px-3 text-xs flex rounded transition"
@@ -679,9 +679,9 @@
 									type="button"
 								>
 									{#if modelUploadMode === 'file'}
-										<span class="ml-2 self-center">File Mode</span>
+										<span class="ml-2 self-center">{$_("btn.fileMode")}</span>
 									{:else}
-										<span class="ml-2 self-center">URL Mode</span>
+										<span class="ml-2 self-center">{$_("btn.urlMode")}</span>
 									{/if}
 								</button>
 							</div>
@@ -713,7 +713,7 @@
 												{#if modelInputFile && modelInputFile.length > 0}
 													{modelInputFile[0].name}
 												{:else}
-													Click here to select
+													{$_("btn.clickHereSelect")}
 												{/if}
 											</button>
 										</div>
@@ -727,7 +727,7 @@
 												type="url"
 												required
 												bind:value={modelFileUrl}
-												placeholder="Type Hugging Face Resolve (Download) URL"
+												placeholder={$_("placeholder.typeHuggingFaceResolveURL")}
 											/>
 										</div>
 									{/if}
@@ -787,7 +787,7 @@
 							{#if (modelUploadMode === 'file' && modelInputFile && modelInputFile.length > 0) || (modelUploadMode === 'url' && modelFileUrl !== '')}
 								<div>
 									<div>
-										<div class=" my-2.5 text-sm font-medium">Modelfile Content</div>
+										<div class=" my-2.5 text-sm font-medium">{$_("message.modelfileContent")}</div>
 										<textarea
 											bind:value={modelFileContent}
 											class="w-full rounded py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-800 outline-none resize-none"
@@ -800,7 +800,7 @@
 								To access the GGUF models available for downloading, <a
 									class=" text-gray-500 dark:text-gray-300 font-medium underline"
 									href="https://huggingface.co/models?search=gguf"
-									target="_blank">click here.</a
+									target="_blank">{$_("btn.clickHere")}</a
 								>
 							</div>
 
@@ -833,13 +833,13 @@
 				<div>
 					<div class="mb-2">
 						<div class="flex justify-between items-center text-xs">
-							<div class=" text-sm font-medium">Manage LiteLLM Models</div>
+							<div class=" text-sm font-medium">{$_("message.manageLiteLLMModels")}</div>
 							<button
 								class=" text-xs font-medium text-gray-500"
 								type="button"
 								on:click={() => {
 									showLiteLLM = !showLiteLLM;
-								}}>{showLiteLLM ? 'Hide' : 'Show'}</button
+								}}>{showLiteLLM ? $_("btn.hide") : $_("btn.show")}</button
 							>
 						</div>
 					</div>
@@ -847,14 +847,14 @@
 					{#if showLiteLLM}
 						<div>
 							<div class="flex justify-between items-center text-xs">
-								<div class=" text-sm font-medium">Add a model</div>
+								<div class=" text-sm font-medium">{$_("message.addModel")}</div>
 								<button
 									class=" text-xs font-medium text-gray-500"
 									type="button"
 									on:click={() => {
 										showLiteLLMParams = !showLiteLLMParams;
 									}}
-									>{showLiteLLMParams ? 'Hide Additional Params' : 'Show Additional Params'}</button
+									>{showLiteLLMParams ? $_("btn.hide") + " " + $_("btn.additionalParams") : $_("btn.show") + " " + $_("btn.additionalParams")}</button
 								>
 							</div>
 						</div>
@@ -864,7 +864,7 @@
 								<div class="flex-1 mr-2">
 									<input
 										class="w-full rounded-lg py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
-										placeholder="Enter LiteLLM Model (litellm_params.model)"
+										placeholder={$_("placeholder.enterLiteLLMModel") + " (litellm_params.model)"}
 										bind:value={liteLLMModel}
 										autocomplete="off"
 									/>
@@ -891,12 +891,12 @@
 
 							{#if showLiteLLMParams}
 								<div>
-									<div class=" mb-1.5 text-sm font-medium">Model Name</div>
+									<div class=" mb-1.5 text-sm font-medium">{$_("message.modelName")}</div>
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
 												class="w-full rounded-lg py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
-												placeholder="Enter Model Name (model_name)"
+												placeholder={$_("placeholder.enterModelName") + " (model_name)"}
 												bind:value={liteLLMModelName}
 												autocomplete="off"
 											/>
@@ -965,18 +965,18 @@
 						</div>
 
 						<div class="mb-2 text-xs text-gray-400 dark:text-gray-500">
-							Not sure what to add?
+							{$_("message.modelNotAdd")}?
 							<a
 								class=" text-gray-300 font-medium underline"
 								href="https://litellm.vercel.app/docs/proxy/configs#quick-start"
 								target="_blank"
 							>
-								Click here for help.
+								{$_("btn.clickhereForHelp")}
 							</a>
 						</div>
 
 						<div>
-							<div class=" mb-2.5 text-sm font-medium">Delete a model</div>
+							<div class=" mb-2.5 text-sm font-medium">{$_("message.deleteModel")}</div>
 							<div class="flex w-full">
 								<div class="flex-1 mr-2">
 									<select

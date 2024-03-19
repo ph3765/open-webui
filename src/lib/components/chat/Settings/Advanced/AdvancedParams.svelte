@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { _ } from "svelte-i18n";
 	export let options = {
 		// Advanced
 		seed: 0,
@@ -20,12 +21,12 @@
 <div class=" space-y-3 text-xs">
 	<div>
 		<div class=" py-0.5 flex w-full justify-between">
-			<div class=" w-20 text-xs font-medium self-center">Seed</div>
+			<div class=" w-20 text-xs font-medium self-center">{$_("message.seed")}</div>
 			<div class=" flex-1 self-center">
 				<input
 					class="w-full rounded py-1.5 px-4 text-sm dark:text-gray-300 dark:bg-gray-800 outline-none border border-gray-100 dark:border-gray-600"
 					type="number"
-					placeholder="Enter Seed"
+					placeholder={$_("placeholder.enterSeed")}
 					bind:value={options.seed}
 					autocomplete="off"
 					min="0"
@@ -36,12 +37,12 @@
 
 	<div>
 		<div class=" py-0.5 flex w-full justify-between">
-			<div class=" w-20 text-xs font-medium self-center">Stop Sequence</div>
+			<div class=" w-20 text-xs font-medium self-center">{$_("message.stopSequence")}</div>
 			<div class=" flex-1 self-center">
 				<input
 					class="w-full rounded py-1.5 px-4 text-sm dark:text-gray-300 dark:bg-gray-800 outline-none border border-gray-100 dark:border-gray-600"
 					type="text"
-					placeholder="Enter Stop Sequence"
+					placeholder={$_("placeholder.enterStopSequence")}
 					bind:value={options.stop}
 					autocomplete="off"
 				/>
@@ -51,7 +52,7 @@
 
 	<div class=" py-0.5 w-full justify-between">
 		<div class="flex w-full justify-between">
-			<div class=" self-center text-xs font-medium">Temperature</div>
+			<div class=" self-center text-xs font-medium">{$_("message.temperature")}</div>
 
 			<button
 				class="p-1 px-3 text-xs flex rounded transition"
@@ -61,9 +62,9 @@
 				}}
 			>
 				{#if options.temperature === ''}
-					<span class="ml-2 self-center"> Default </span>
+					<span class="ml-2 self-center"> {$_("btn.default")} </span>
 				{:else}
-					<span class="ml-2 self-center"> Custom </span>
+					<span class="ml-2 self-center"> {$_("btn.custom")} </span>
 				{/if}
 			</button>
 		</div>

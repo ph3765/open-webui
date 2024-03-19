@@ -10,6 +10,7 @@
 	import { getSignUpEnabledStatus, toggleSignUpEnabledStatus } from '$lib/apis/auths';
 	import EditUserModal from '$lib/components/admin/EditUserModal.svelte';
 	import SettingsModal from '$lib/components/admin/SettingsModal.svelte';
+	import { _ } from "svelte-i18n";
 
 	let loaded = false;
 	let users = [];
@@ -131,10 +132,10 @@
 									class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
 								>
 									<tr>
-										<th scope="col" class="px-3 py-2"> Role </th>
-										<th scope="col" class="px-3 py-2"> Name </th>
-										<th scope="col" class="px-3 py-2"> Email </th>
-										<th scope="col" class="px-3 py-2"> Action </th>
+										<th scope="col" class="px-3 py-2"> {$_("table.role")} </th>
+										<th scope="col" class="px-3 py-2"> {$_("table.name")} </th>
+										<th scope="col" class="px-3 py-2"> {$_("table.email")} </th>
+										<th scope="col" class="px-3 py-2"> {$_("table.action")} </th>
 									</tr>
 								</thead>
 								<tbody>

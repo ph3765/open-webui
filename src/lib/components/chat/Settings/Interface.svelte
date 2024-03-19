@@ -97,11 +97,11 @@
 >
 	<div class=" space-y-3 pr-1.5 overflow-y-scroll h-80">
 		<div>
-			<div class=" mb-1 text-sm font-medium">WebUI Add-ons</div>
+			<div class=" mb-1 text-sm font-medium">{$_("message.webUIAddOns")}</div>
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs font-medium">Title Auto-Generation</div>
+					<div class=" self-center text-xs font-medium">{$_("message.titleAutoGeneration")}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -111,9 +111,9 @@
 						type="button"
 					>
 						{#if titleAutoGenerate === true}
-							<span class="ml-2 self-center">On</span>
+							<span class="ml-2 self-center">{$_("btn.on")}</span>
 						{:else}
-							<span class="ml-2 self-center">Off</span>
+							<span class="ml-2 self-center">{$_("btn.off")}</span>
 						{/if}
 					</button>
 				</div>
@@ -121,7 +121,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs font-medium">Response AutoCopy to Clipboard</div>
+					<div class=" self-center text-xs font-medium">{$_("message.responseAutoCopyClipboard")}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -131,9 +131,9 @@
 						type="button"
 					>
 						{#if responseAutoCopy === true}
-							<span class="ml-2 self-center">On</span>
+							<span class="ml-2 self-center">{$_("btn.on")}</span>
 						{:else}
-							<span class="ml-2 self-center">Off</span>
+							<span class="ml-2 self-center">{$_("btn.off")}</span>
 						{/if}
 					</button>
 				</div>
@@ -151,9 +151,9 @@
 						type="button"
 					>
 						{#if fullScreenMode === true}
-							<span class="ml-2 self-center">On</span>
+							<span class="ml-2 self-center">{$_("btn.on")}</span>
 						{:else}
-							<span class="ml-2 self-center">Off</span>
+							<span class="ml-2 self-center">{$_("btn.off")}</span>
 						{/if}
 					</button>
 				</div>
@@ -173,9 +173,9 @@
 						type="button"
 					>
 						{#if showUsername === true}
-							<span class="ml-2 self-center">On</span>
+							<span class="ml-2 self-center">{$_("btn.on")}</span>
 						{:else}
-							<span class="ml-2 self-center">Off</span>
+							<span class="ml-2 self-center">{$_("btn.off")}</span>
 						{/if}
 					</button>
 				</div>
@@ -183,7 +183,6 @@
 		</div>
 
 		<hr class=" dark:border-gray-700" />
-
 		<div>
 			<div class=" mb-2.5 text-sm font-medium">Set Title Auto-Generation Model</div>
 			<div class="flex w-full">
@@ -304,7 +303,7 @@
 			class=" px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-gray-100 transition rounded-lg"
 			type="submit"
 		>
-			Save
+			{$_("btn.saveModel")}
 		</button>
 	</div>
 </form>
